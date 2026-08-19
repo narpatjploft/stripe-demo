@@ -1,0 +1,33 @@
+# Composer
+/vendor/
+
+# Secrets & local config
+#config.php
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+error_log
+php_errors.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# PHP
+.phpunit.result.cache
+
+# XAMPP / local temp
+*.tmp
+*.bak
+/composer.lock

@@ -1,0 +1,123 @@
+.btn-cards {
+    background: var(--surface2);
+    color: var(--accent);
+    border: 1px solid var(--border);
+    font-size: 0.78rem;
+    padding: 6px 13px;
+    border-radius: 8px;
+}
+.btn-cards:hover { border-color: var(--accent); }
+
+@keyframes newRow {
+    0%   { background: #6c63ff22; }
+    100% { background: transparent; }
+}
+.new-row { animation: newRow 2s ease forwards; }
+
+.action-btns { display: flex; gap: 6px; flex-wrap: wrap; }
+.btn-action {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    border-radius: 7px;
+    padding: 5px 11px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.btn-action-cards  { background: var(--surface2); color: var(--accent); border-color: var(--border); text-decoration: none; }
+.btn-action-cards:hover  { border-color: var(--accent); }
+.btn-action-sub    { background: var(--accent)18; color: var(--accent); border-color: var(--accent)44; }
+.btn-action-sub:hover    { background: var(--accent)33; }
+.btn-action-charge { background: #34d39918; color: var(--success); border-color: #34d39944; }
+.btn-action-charge:hover { background: #34d39933; }
+
+.modal-backdrop {
+    position: fixed; inset: 0;
+    background: #0009;
+    backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 500;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s;
+}
+.modal-backdrop.open { opacity: 1; pointer-events: auto; }
+
+.modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 24px 64px #000a;
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.25s;
+}
+.modal-backdrop.open .modal { transform: translateY(0) scale(1); }
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.modal-title { font-size: 1.05rem; font-weight: 700; }
+.modal-close {
+    background: none; border: none; color: var(--muted);
+    cursor: pointer; padding: 4px; line-height: 1;
+    transition: color 0.2s;
+}
+.modal-close:hover { color: var(--text); }
+
+.modal-customer-info {
+    display: flex; align-items: center; gap: 12px;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 16px; margin-bottom: 22px;
+}
+.modal-avatar {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: linear-gradient(135deg, #6c63ff, #a78bfa);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.8rem; color: #fff; flex-shrink: 0;
+}
+.modal-cname { font-weight: 600; font-size: 0.88rem; }
+.modal-cemail { font-size: 0.75rem; color: var(--muted); }
+
+.modal .form-group { margin-bottom: 16px; }
+.modal label {
+    display: block; font-size: 0.78rem; font-weight: 600;
+    color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.04em; margin-bottom: 7px;
+}
+.modal input[type=number],
+.modal input[type=text],
+.modal select {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 11px 14px; color: var(--text);
+    font-family: 'Inter', sans-serif; font-size: 0.9rem;
+    outline: none; width: 100%; transition: border-color 0.2s;
+}
+.modal input:focus, .modal select:focus { border-color: var(--accent); }
+.modal input::placeholder { color: var(--muted); }
+.modal select option { background: var(--surface2); }
+
+.modal-input-prefix { position: relative; }
+.modal-input-prefix span {
+    position: absolute; left: 14px; top: 50%;
+    transform: translateY(-50%); color: var(--muted); pointer-events: none;
+}
+.modal-input-prefix input { padding-left: 28px; }
+
+.modal-error {
+    color: var(--danger); font-size: 0.82rem;
+    margin-bottom: 14px; display: none;
+}
+.modal .btn-primary {
+    width: 100%; justify-content: center; margin-top: 0;
+    padding: 13px 24px; font-size: 0.92rem;
+}
